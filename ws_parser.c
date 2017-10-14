@@ -244,7 +244,8 @@ ws_parser_execute(ws_parser_t* parser, /* mutates! */ char* buff, size_t len)
                 }
 
                 if(parser->mask_flag) {
-                    for(size_t i = 0; i < chunk_length; i++) {
+                    size_t i;
+                    for(i = 0; i < chunk_length; i++) {
                         buff[i] ^= parser->mask[parser->mask_pos++];
                     }
                 }
